@@ -13,6 +13,7 @@ import { SeeProductPageComponent } from './pages/see-product-page/see-product-pa
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { SearchComponent } from './components/search/search.component';
 import { CarrouselComponent } from './components/carrousel/carrousel.component';
+import { CardComponent } from './components/card/card.component';
 @NgModule({
   declarations: [
     LayoutPageComponent,
@@ -21,6 +22,7 @@ import { CarrouselComponent } from './components/carrousel/carrousel.component';
     NavBarComponent,
     SearchComponent,
     CarrouselComponent,
+    CardComponent,
   ],
   imports: [
     CommonModule,

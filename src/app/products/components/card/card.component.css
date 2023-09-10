@@ -1,0 +1,8 @@
+  
+  .example-header-image {
+    background-size: cover;
+  }
+  mat-card{
+    border: none;
+    box-shadow:none;
+  }

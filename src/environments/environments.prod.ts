@@ -1,4 +1,4 @@
 
 export const environments = {
-    baseUrl: 'http://localhost/commerce/BACKEND'
+    baseUrl: 'http://localhost/commerce/BACKEND/API'
 }

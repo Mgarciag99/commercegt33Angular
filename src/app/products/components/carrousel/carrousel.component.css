@@ -1,0 +1,14 @@
+
+img{
+    height: 37em;
+}
+#carouselExampleAutoplaying{
+    margin-top: -14em
+}
+header{
+    background-size: 100% 40em;
+    height: 37em;
+    background: url(../../../../assets/img/tienda_online_exitosa.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}

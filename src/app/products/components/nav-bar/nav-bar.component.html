@@ -1,0 +1,24 @@
+<mat-toolbar>
+    <div class="container-lg d-flex justify-content-between align-items-center navbar">
+        <span>Commerce gt 33</span>
+        <div class="form">
+            <app-search></app-search>
+        </div>
+        <div>
+            <button mat-button [matMenuTriggerFor]="aboveMenu"><mat-icon>home</mat-icon>Inicio</button>
+            <mat-menu #aboveMenu="matMenu" yPosition="above">
+                <button mat-menu-item>Item 1</button>
+                <button mat-menu-item>Item 2</button>
+            </mat-menu>
+    
+            <button mat-button [matMenuTriggerFor]="belowMenu"><mat-icon>phone</mat-icon>Contactanos</button>
+            <mat-menu #belowMenu="matMenu" yPosition="below">
+                <button mat-menu-item>Item 1</button>
+                <button mat-menu-item>Item 2</button>
+            </mat-menu>
+        </div>
+        <button mat-icon-button>
+            <mat-icon>menu</mat-icon>
+        </button>
+    </div>
+</mat-toolbar>

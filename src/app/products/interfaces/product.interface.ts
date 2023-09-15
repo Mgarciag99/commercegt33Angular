@@ -1,5 +1,7 @@
 export interface dataProduct {
     status:  boolean;
+    numberPage: any,
+    sizePage: any,
     data:    product[];
     message: string;
 }

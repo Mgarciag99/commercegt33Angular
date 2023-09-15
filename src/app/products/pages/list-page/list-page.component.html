@@ -1,10 +1,18 @@
-
+<div
+  infinite-scroll
+  [infiniteScrollDistance]="2"
+  [infiniteScrollThrottle]="1000"
+  (scrolled)="onScroll()"
+>
 <div class="mt-5 mb-5">
     <h1 class="fs-1 text-center font-weight-bold text-muted"><b>Nuestros Productos</b></h1>
 </div>
 <app-progres-barr></app-progres-barr>
-<div class="bg-light">
-    <div class="container">
-        <app-card [products]="products"></app-card>
+
+<div class="bg-light"
+>
+    <div class="container" id="container">
+        <app-card [products]="products"
+        ></app-card>
     </div>
 </div>

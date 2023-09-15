@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
-
 import { ProductsRoutingModule } from './products-routing.module';
 import { MaterialModule } from '../material/material.module';
 import { SharedModule } from '../shared/shared.module';
@@ -14,6 +13,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { SearchComponent } from './components/search/search.component';
 import { CarrouselComponent } from './components/carrousel/carrousel.component';
 import { CardComponent } from './components/card/card.component';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 @NgModule({
   declarations: [
     LayoutPageComponent,
@@ -30,7 +30,8 @@ import { CardComponent } from './components/card/card.component';
     MaterialModule,
     SharedModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    InfiniteScrollModule
   ]
 })
 export class ProductsModule { }

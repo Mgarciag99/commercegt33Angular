@@ -2,18 +2,20 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environments } from 'src/environments/environments.prod';
-import { dataProduct, product } from '../interfaces/product.interface';
+import { MethodsService } from '../../shared/services/methods.service';
 @Injectable({providedIn: 'root'})
 export class productService {
     
     private baseUrl: string = environments.baseUrl;
 
     constructor(
-        private httpClient: HttpClient
+        private MethodsService: MethodsService
     ) { }
     
-    getProducts():Observable<dataProduct>{
-        return this.httpClient.get<dataProduct>(`${this.baseUrl}/API_product.php?request=get_products`)
+    getProducts(page?:number, loadingType?: string ):Observable<any>{
+
+        let pageSize = page?? 1;
+        return this.MethodsService.getMethod(`${this.baseUrl}/API_product.php?request=get_products&page=${pageSize}`, loadingType)
     }
     
 }

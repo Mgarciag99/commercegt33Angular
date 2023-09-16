@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { productService } from '../../services/produc.service';
-import { Subject, of, takeUntil, fromEvent, Observable, takeLast } from 'rxjs';
-import { loadingService } from '../../services/loading.service';
+import { Subject, takeUntil } from 'rxjs';
 import { product } from '../../interfaces/product.interface';
+import { loadingService } from '../../services/loading.service';
 @Component({
   selector: 'app-list-page',
   templateUrl: './list-page.component.html',
@@ -14,55 +14,49 @@ export class ListPageComponent implements OnInit, OnDestroy {
   isLoading: boolean = true;
   page: number = 1;
   constructor(
+    public loadingService: loadingService,
     private productService: productService,
-    private loadingService: loadingService
-  ){}
+  ) { }
 
   ngOnInit(): void {
-    this.productService.getProducts(1,  'loader')
-    .pipe(
-      takeUntil(this.destroy$) 
-    )
-    .subscribe(
-      {
-        next: (products)=>{
-          this.products = products.data;
-        },
-        error: (error)=>{
-          console.log(error)
-        },
-      }
-    )
-
+    this.productService.getProducts(this.page, 'spinner')
+      .pipe(
+        takeUntil(this.destroy$),
+      )
+      .subscribe(
+        {
+          next: (products) => {
+            this.products = products.data;
+          },
+          error: (error) => {
+            console.log(error)
+          },
+        }
+      )
   }
 
   onScroll() {
+    if(!this.products && this.page < 2)return;
     this.page++;
-    this.productService.getProducts(this.page)
-    .pipe(
-      takeUntil(this.destroy$) 
-    )
-    .subscribe(
-      {
-        next: (products)=>{
-          console.log(products)
-          this.products.push(...products.data)
-        },
-        error: (error)=>{
-          console.log(error)
-        },
-        complete: ()=>{
-          setTimeout(()=>{
-            this.loadingService.hide();
-          }, 500)
+    this.productService.getProducts(this.page, 'spinner')
+      .pipe(
+        takeUntil(this.destroy$),
+      )
+      .subscribe(
+        {
+          next: (products) => {
+            this.products.push(...products.data)
+
+          },
+          error: (error) => {
+            console.log(error)
+          },
         }
-      }
-    )
-    
+      )
   }
-  
+
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
- }
+  }
 }

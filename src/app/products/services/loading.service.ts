@@ -6,12 +6,22 @@ export class loadingService {
     constructor() { }
     private showProgressBarSubject = new BehaviorSubject<boolean>(false);
     showProgressBar$ = this.showProgressBarSubject.asObservable();
+    private showSpinnerSubject = new BehaviorSubject<boolean>(false);
+    showSpinner$ = this.showSpinnerSubject.asObservable();
 
-    show(){
+
+    showProgressBar(){
         this.showProgressBarSubject.next(true);
     }
-    hide(){
+    hideProgressBar(){
         this.showProgressBarSubject.next(false);
+    }
+
+    showSpinner(){
+        this.showSpinnerSubject.next(true);
+    }
+    hideSpinner(){
+        this.showSpinnerSubject.next(false);
     }
 
 }

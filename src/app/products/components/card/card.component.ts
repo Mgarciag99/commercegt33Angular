@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { product } from '../../interfaces/product.interface';
-
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',

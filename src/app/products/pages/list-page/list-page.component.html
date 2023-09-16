@@ -4,15 +4,15 @@
   [infiniteScrollThrottle]="1000"
   (scrolled)="onScroll()"
 >
-<div class="mt-5 mb-5">
-    <h1 class="fs-1 text-center font-weight-bold text-muted"><b>Nuestros Productos</b></h1>
-</div>
-<app-progres-barr></app-progres-barr>
-
-<div class="bg-light"
->
-    <div class="container" id="container">
-        <app-card [products]="products"
+<div class="container mt-5">
+    <div class="bg-light rounded-4 p-3">
+        <h2 class="fs-1 font-weight-bold text-mutedk"><b>Nuestros Productos</b></h2>
+        <app-card 
+        [products]="products"
         ></app-card>
+        <app-cards-skeleton *ngIf="loadingService.showSpinner$ | async"></app-cards-skeleton>
+        <div class="d-flex justify-content-center pb-1 pt-1">
+            <mat-spinner *ngIf="loadingService.showSpinner$ | async" [diameter]="50"></mat-spinner>
+        </div>
     </div>
 </div>

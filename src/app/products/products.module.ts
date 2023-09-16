@@ -14,6 +14,7 @@ import { SearchComponent } from './components/search/search.component';
 import { CarrouselComponent } from './components/carrousel/carrousel.component';
 import { CardComponent } from './components/card/card.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { CarrouselItemsComponent } from './components/carrousel-items/carrousel-items.component';
 @NgModule({
   declarations: [
     LayoutPageComponent,
@@ -23,6 +24,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     SearchComponent,
     CarrouselComponent,
     CardComponent,
+    CarrouselItemsComponent,
   ],
   imports: [
     CommonModule,

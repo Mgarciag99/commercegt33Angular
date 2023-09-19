@@ -14,7 +14,6 @@ const routes: Routes = [
         path: 'list-products',
         component: ListPageComponent
       },
-
       {
         path: 'see-product/:id',
         component: SeeProductPageComponent

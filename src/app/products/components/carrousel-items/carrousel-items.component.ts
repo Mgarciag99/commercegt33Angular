@@ -13,7 +13,6 @@ export class CarrouselItemsComponent implements OnChanges{
   ngOnChanges(changes: SimpleChanges) {
     if (changes['categories'].currentValue !== undefined)
     this.makeGrops();
-    
   }
 
 
@@ -22,7 +21,7 @@ export class CarrouselItemsComponent implements OnChanges{
     let categories = this.categories?.slice()
     for( let i = 0; i < categories!.length; i++ ){
         group.push(categories![i])
-        if (group.length === 8 || i === categories!.length - 1) {
+        if (group.length === 6 || i === categories!.length - 1) {
           this.groups.push(group)
           group = [];
         }      

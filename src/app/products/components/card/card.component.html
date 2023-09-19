@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-md-4 my-4" *ngFor="let product of products">
+  <div class="col-md-3 my-4" *ngFor="let product of products">
     <mat-card class="example-card rounded-4">
       <mat-card-header>
         <div mat-card-avatar class="example-header-image" style="background-image: url('{{product.pro_image}}');"></div>
@@ -12,7 +12,7 @@
       <mat-card-content>
       </mat-card-content>
       <mat-card-actions class="d-flex justify-content-end">
-        <button mat-flat-button>VER</button>
+        <button mat-flat-button class="m-1" [routerLink]="['/products/see-product', product.pro_id]">VER</button>
         <button mat-flat-button color="primary">COMPRAR</button>
       </mat-card-actions>
     </mat-card>

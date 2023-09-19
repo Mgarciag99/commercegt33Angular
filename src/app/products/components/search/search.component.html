@@ -1,12 +1,8 @@
 <form class="example-form">
-    <mat-form-field class="example-full-width">
-        <mat-label>Buscar...</mat-label>
-        <input type="text" placeholder="Nombre del producto" aria-label="Buscar..." matInput
-            [formControl]="myControl" [matAutocomplete]="auto">
-        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-            <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-                {{option}}
-            </mat-option>
-        </mat-autocomplete>
-    </mat-form-field>
+    <div id="container-search">
+        <div class="input-search">
+            <input type="text" placeholder="Que estas Buscando?">
+            <button mat-flat-button color="primary"><mat-icon>search</mat-icon></button>                 
+        </div>
+    </div>
 </form>

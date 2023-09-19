@@ -1,1 +1,28 @@
-<p>see-product-page works!</p>
+<div class="container">
+    <nav aria-label="breadcrumb " class="mt-5">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">computadoras</a></li>
+          <li class="breadcrumb-item active" aria-current="page">laptop</li>
+        </ol>
+    </nav>
+    <div class="row d-flex align-items-center">
+        <div class="col-lg-6">
+            <app-carrousel></app-carrousel>
+        </div>
+        <div class="col-lg-6">
+            <h1 class="fs-2 font-weight-bold ">Nombre del Producto</h1>
+            <h2 class="text-muted fs-6">PANTALONES</h2>
+            <p class="text-justify">Descripcion: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam corrupti nobis ad laborum quisquam quae incidunt at quaerat excepturi! Voluptate quam placeat distinctio aspernatur facere quas nisi architecto, sint repellendus?</p>
+            <mat-form-field class="example-full-width">
+                <mat-icon matSuffix>remove</mat-icon>
+                <mat-label>Cantidad</mat-label>
+                <input type="text" matInput>
+                <mat-icon matSuffix>add</mat-icon>
+            </mat-form-field>
+            <mat-card-actions class="d-flex">
+                <button mat-flat-button class="mr-1">Realizar Compra</button>
+                <button mat-flat-button color="primary"><mat-icon>shop</mat-icon>Agregar al carrito</button>
+            </mat-card-actions>
+        </div>
+    </div>
+</div>

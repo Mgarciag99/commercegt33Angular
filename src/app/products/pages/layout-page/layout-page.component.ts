@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { CategoryServiceService } from '../../services/category-service.service';
 import { Subject, takeUntil } from 'rxjs';
 import { category } from '../../interfaces/category.interface';
 @Component({
@@ -11,22 +10,13 @@ export class LayoutPageComponent {
 
   isLoading: boolean = false;
     constructor(
-    private CategoryServiceService: CategoryServiceService
   ){}
     
   private destroy$: Subject<void> = new Subject<void>();
   categories?: category[];
   
   ngOnInit(): void {
-    this.CategoryServiceService.getCategories()
-    .pipe(
-      takeUntil(this.destroy$),
-    )
-    .subscribe(
-      (categories)=>{
-        this.categories = categories.data;
-      }
-    )
+
   }
 
   ngOnDestroy(): void {

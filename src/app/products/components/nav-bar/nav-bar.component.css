@@ -1,6 +1,3 @@
-.navbar{
-  height: 10rem;
-}
-.form{ 
-  height: 3em;
+mat-toolbar{
+  height: 5em !important;
 }

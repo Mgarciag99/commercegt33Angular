@@ -15,6 +15,7 @@ import { CarrouselComponent } from './components/carrousel/carrousel.component';
 import { CardComponent } from './components/card/card.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { CarrouselItemsComponent } from './components/carrousel-items/carrousel-items.component';
+import { FooterComponent } from './components/footer/footer.component';
 @NgModule({
   declarations: [
     LayoutPageComponent,
@@ -25,6 +26,7 @@ import { CarrouselItemsComponent } from './components/carrousel-items/carrousel-
     CarrouselComponent,
     CardComponent,
     CarrouselItemsComponent,
+    FooterComponent,
   ],
   imports: [
     CommonModule,
